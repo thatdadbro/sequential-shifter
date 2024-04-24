@@ -5,9 +5,6 @@ Gamepad gp;
 int shiftUpPrev, shiftDownPrev;
 
 void setup() {
-  // Serial.begin(115200);
-  // Serial.println("Setup");
-
   pinMode(0,  INPUT_PULLUP); // Shift Up
   pinMode(1,  INPUT_PULLUP); // Shift Down
 
@@ -23,7 +20,6 @@ void loop() {
 
   if(shiftUp == LOW && shiftUpPrev == HIGH) {
     gp.setButtonState(1, true);
-    // Serial.println("Shift Up");
   }
   else {
     gp.setButtonState(1, false);  
@@ -31,7 +27,6 @@ void loop() {
 
   if(shiftDown == LOW && shiftDownPrev == HIGH) {
     gp.setButtonState(0, true);
-    // Serial.println("Shift Down");
   }
   else {
     gp.setButtonState(0, false);
